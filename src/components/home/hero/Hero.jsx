@@ -88,6 +88,31 @@ export default function Hero() {
       },
       "-=0.75"
     );
+
+    // Pause for a moment after text finishes
+    tl.to({}, { duration: 0.5 });
+
+    // Bring video above everything
+    tl.set(videoRef.current, {
+      zIndex: 50,
+    });
+
+    // Expand video to fill hero
+    tl.to(videoRef.current, {
+      width: "100vw",
+      height: "100vh",
+      left: 0,
+      top: 0,
+      borderRadius: 0,
+      duration: 1.6,
+      ease: "power4.inOut",
+
+      onUpdate: () => {
+        gsap.set(videoRef.current, {
+          transform: "none",
+        });
+      },
+    });
   }, []);
 
   return (

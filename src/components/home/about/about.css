@@ -1,0 +1,123 @@
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e2e4e8;
+  color: #111111;
+  padding: 3rem 0 4rem 0; /* Padding left/right removed to allow 100% full-width header */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 100% Viewport Width Header Row */
+.who-we-wrapper {
+  width: 100%;
+  padding-right: 4rem; /* Right spacing edge */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end; /* Aligns "WHO WE" to the far right */
+}
+
+.who-we-text {
+  margin: 0;
+  text-align: right;
+  line-height: 0.85;
+}
+
+.are-heading {
+  margin: 0 0 2rem 0;
+  line-height: 0.85;
+}
+
+/* Base Typography Specs */
+.heading-line {
+  display: block;
+  font-size: clamp(4.5rem, 9.5vw, 9.5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.heading-line.outlined {
+  font-family: "Syne", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px #111111;
+}
+
+.heading-line.solid {
+  font-family: "Syne", sans-serif;
+  color: #111111;
+  padding-left: 4rem;
+}
+
+/* Main Container Layout */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 0;
+  padding: 0 0 0 2rem; /* Retain padding for body content */
+  box-sizing: border-box;
+}
+
+/* Body Copy Paragraphs */
+.body-paragraph {
+  margin-bottom: 2rem;
+  padding-left: 4rem;
+  /* max-width: 480px; */
+}
+
+.body-paragraph p {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  color: #222222;
+  margin: 0;
+}
+
+.body-paragraph p em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Mask Reveal Animation */
+.mask-wrapper {
+  display: block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.mask-wrapper > * {
+  display: block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-line.reveal-active > * {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Right Slider Wrapper */
+.about-right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 1rem;
+}
+
+/* Responsive Handling */
+@media (max-width: 1024px) {
+  .who-we-wrapper {
+    padding-right: 2rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    padding: 0 2rem;
+  }
+}
